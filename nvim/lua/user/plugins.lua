@@ -34,7 +34,7 @@ packer.init({
 -- ##################################### Packer shit ##################################
 return packer.startup(function(use)
 	use({ "wbthomason/packer.nvim"}) -- Have packer manage itself
-	use ("0ur4n05/header42.nvim")
+	use ("42Paris/42header")
 	use({ "nvim-lua/plenary.nvim"}) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs"}) -- Autopairs, integrates with both cmp and treesitter
 	use({ "kyazdani42/nvim-web-devicons"})
