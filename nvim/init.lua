@@ -11,9 +11,7 @@ require "user.project"
 require "user.toggleterm"
 require "user.treesitter"
 require "user.autopairs"
+require "user.lsp"
 
 vim.cmd "autocmd VimEnter * NvimTreeToggle"
 
-
-user42 = "mlalama"
-mail42 = "mlalama@student.1337.com"

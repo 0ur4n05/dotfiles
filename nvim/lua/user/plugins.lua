@@ -34,10 +34,10 @@ packer.init({
 -- ##################################### Packer shit ##################################
 return packer.startup(function(use)
 	use({ "wbthomason/packer.nvim"}) -- Have packer manage itself
+	use ("0ur4n05/header42.nvim")
 	use({ "nvim-lua/plenary.nvim"}) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs"}) -- Autopairs, integrates with both cmp and treesitter
 	use({ "kyazdani42/nvim-web-devicons"})
-	use({"42Paris/42header"})
 	use({"Pocco81/auto-save.nvim",
 		config = function()require("auto-save").setup {enabled = true}
 	end,})
@@ -70,6 +70,10 @@ return packer.startup(function(use)
 	-- snippets
 	use({ "L3MON4D3/LuaSnip"}) --snippet engine
 	use({ "rafamadriz/friendly-snippets"}) -- a bunch of snippets to use
+	-- LSP
+	use({ "neovim/nvim-lspconfig", commit = "148c99bd09b44cf3605151a06869f6b4d4c24455" }) -- enable LSP
+	use({ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }) -- simple to use language server installer
+	use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

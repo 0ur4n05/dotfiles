@@ -69,11 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["42header"] = {
-    loaded = true,
-    path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/42header",
-    url = "https://github.com/42Paris/42header"
-  },
   LuaSnip = {
     loaded = true,
     path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -84,12 +79,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
     url = "https://github.com/Pocco81/auto-save.nvim"
-  },
-  base46 = {
-    config = { "\27LJ\2\nK\0\0\4\0\4\0\t6\0\0\0006\2\1\0'\3\2\0B\0\3\3\15\0\0\0X\2\2€9\2\3\1B\2\1\1K\0\1\0\15load_theme\vbase46\frequire\npcall\0" },
-    loaded = true,
-    path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/base46",
-    url = "https://github.com/NvChad/base46"
   },
   ["bufferline.nvim"] = {
     loaded = true,
@@ -126,6 +115,11 @@ _G.packer_plugins = {
     path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["header42.nvim"] = {
+    loaded = true,
+    path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/header42.nvim",
+    url = "https://github.com/0ur4n05/header42.nvim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -141,6 +135,11 @@ _G.packer_plugins = {
     path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
     url = "https://github.com/EdenEast/nightfox.nvim"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -150,6 +149,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/ouranos/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -194,10 +203,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: base46
-time([[Config for base46]], true)
-try_loadstring("\27LJ\2\nK\0\0\4\0\4\0\t6\0\0\0006\2\1\0'\3\2\0B\0\3\3\15\0\0\0X\2\2€9\2\3\1B\2\1\1K\0\1\0\15load_theme\vbase46\frequire\npcall\0", "config", "base46")
-time([[Config for base46]], false)
 -- Config for: auto-save.nvim
 time([[Config for auto-save.nvim]], true)
 try_loadstring("\27LJ\2\nG\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\fenabled\2\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
