@@ -1,0 +1,24 @@
+# configuration for vimium 
+unmapAll
+map <a-r> reload
+
+# controlling the page
+map k scrollDown
+map l scrollUp
+map G scrollToBottom
+map gg scrollToTop
+
+map t LinkHints.activateModeToOpenInNewTab
+map yy copyCurrentUrl
+
+map h goBack
+map ' goForward
+
+map <a-n> createTab
+map <a-j> previousTab
+map <a-;> nextTab
+map <a-p> togglePinTab
+map <a-m> toggleMuteTab
+map <a-q> removeTab
+map <a-Q> restoreTab
+map <tab> focusInput
