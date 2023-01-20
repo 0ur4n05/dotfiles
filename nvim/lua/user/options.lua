@@ -1,19 +1,42 @@
--- setting some neovim global options 
--- :help to see more options
-vim.opt.clipboard = "unnamedplus"	-- to copy over vim and paste to system clipboard
-vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
-vim.opt.hlsearch = true                         -- highlight all matches on previous search pattern
-vim.opt.ignorecase = true                       -- ignore case in search patterns
-vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
-vim.opt.smartcase = true                        -- smart case
-vim.opt.smartindent = true                      -- make indenting smarter again
-vim.opt.undofile = true                         -- enable persistent undo
-vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 4                             -- insert 4 spaces for a tab
-vim.opt.number = true                           -- set numbered lines
-vim.opt.relativenumber = false                  -- set relative numbered lines
-vim.opt.wrap = false                            -- display lines as one long line
-vim.opt.scrolloff = 8                           -- is one of my fav
-vim.opt.smarttab = true
+local options = {
+  backup = false,                          -- creates a backup file
+  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
+  cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+  conceallevel = 0,                        -- so that `` is visible in markdown files
+  fileencoding = "utf-8",                  -- the encoding written to a file
+  hlsearch = true,                         -- highlight all matches on previous search pattern
+  ignorecase = true,                       -- ignore case in search patterns
+  mouse = "a",                             -- allow the mouse to be used in neovim
+  pumheight = 10,                          -- pop up menu height
+  showtabline = 2,                         -- always show tabs
+  smartcase = true,                        -- smart case
+  smartindent = true,                      -- make indenting smarter again
+  splitbelow = true,                       -- force all horizontal splits to go below current window
+  splitright = true,                       -- force all vertical splits to go to the right of current window
+  swapfile = false,                        -- creates a swapfile
+  timeoutlen = 300,                        -- time to wait for a mapped sequence to complete (in milliseconds)
+  undofile = true,                         -- enable persistent undo
+  updatetime = 300,                        -- faster completion (4000ms default)
+  writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+  number = true,                           -- set numbered lines
 
-vim.opt.shortmess:append "c"
+  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
+  wrap = true,                             -- display lines as one long line
+  linebreak = true,                        -- companion to wrap, don't split words
+  scrolloff = 8,                           -- minimal number of screen lines to keep above and below the cursor
+  sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
+  guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
+}
+
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
+
+-- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
+vim.opt.shortmess:append "c"                           -- don't give |ins-completion-menu| messages
+vim.opt.iskeyword:append "-"                           -- hyphenated words recognized by searches
+vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
+vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
+
+

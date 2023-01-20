@@ -1,40 +1,43 @@
--- configuring the and remaping the normal shit
-
 local opts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
+
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
--- remaping the change between windows in nvim
--- using alt + i3 keybindings
+--Remap space as leader key
+keymap("", "<Space>", "<Nop>", opts)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-keymap("n", "<M-j>", "<C-w>h", opts)
-keymap("n", "<M-k>", "<C-w>j", opts)
-keymap("n", "<M-l>", "<C-w>k", opts)
-keymap("n", "<M-;>", "<C-w>l", opts)
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
 
--- remapping the split shit 
-keymap("n", "<M-n>", ":split<CR>", opts)
-keymap("n", "<M-m>", ":vsplit<CR>", opts)	-- vertical split
+-- Normal --
+-- Better window navigation
+keymap("n", "<Space>j", "<C-w>h", opts)
+keymap("n", "<Space>k", "<C-w>j", opts)
+keymap("n", "<Space>l", "<C-w>k", opts)
+keymap("n", "<Space>;", "<C-w>l", opts)
+keymap("n", "sv", ":vsplit<CR>", opts)
+keymap("n", "sh", ":split<CR>", opts)
 
--- remaping movements keybindings
-keymap("n", "l", "<Up>", opts)
-keymap("n", "j", "<Left>", opts)
-keymap("n", "k", "<Down>", opts)
-keymap("n", ";", "<Right>", opts)
-keymap("v", "l", "<Up>", opts)
-keymap("v", "j", "<Left>", opts)
-keymap("v", "k", "<Down>", opts)
-keymap("v", ";", "<Right>", opts)
+-- Move text up and down
+keymap("v", "<A-k>", ":m .+1<CR>==", opts)
+keymap("v", "<A-l>", ":m .-2<CR>==", opts)
+keymap("v", "p", '"_dP', opts)
 
--- 42header
-keymap("n", "<M-h>", ":Stdheader<CR>",opts)
-
--- nvim tree
-keymap("n", "<M-n>", ":NvimTreeToggle<CR>",opts)
-keymap("n", "<M-b>", ":NvimTreeFocus<CR>",opts)
-keymap("n", "<M-f>", ":NvimTreeFindFile<CR>",opts)
--- toggle term
-keymap("n", "<M-t>", ":ToggleTerm<CR>",opts)
-
+-- adjusting the keymaps
+keymap("n", "j", "h", opts)
+keymap("n", "k", "j", opts)
+keymap("n", "l", "k", opts)
+keymap("n", ";", "l", opts)
+keymap("v", "j", "h", opts)
+keymap("v", "k", "j", opts)
+keymap("v", "l", "k", opts)
+keymap("v", ";", "l", opts)

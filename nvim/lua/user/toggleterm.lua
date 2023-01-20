@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 toggleterm.setup({
-	size = 10,
+	size = 20,
 	open_mapping = [[<c-\>]],
 	hide_numbers = true,
 	shade_filetypes = {},
@@ -13,8 +13,17 @@ toggleterm.setup({
 	start_in_insert = true,
 	insert_mappings = true,
 	persist_size = true,
+	direction = "float",
 	close_on_exit = true,
 	shell = vim.o.shell,
+	float_opts = {
+		border = "curved",
+		winblend = 0,
+		highlights = {
+			border = "Normal",
+			background = "Normal",
+		},
+	},
 })
 
 function _G.set_terminal_keymaps()
@@ -59,4 +68,3 @@ local python = Terminal:new({ cmd = "python", hidden = true })
 function _PYTHON_TOGGLE()
 	python:toggle()
 end
-
