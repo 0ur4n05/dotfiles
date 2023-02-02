@@ -18,6 +18,14 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- chadtree -- 
+keymap("n", "cc", ":CHADopen<CR>", opts)
+ -- terminal
+keymap("n", "t", ":ToggleTerm<CR>", opts)
+-- 42 header
+keymap("n", "std", ":Stdheader<CR>", opts)
+keymap("n", "da", ":!date<CR>", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<Space>j", "<C-w>h", opts)
@@ -26,6 +34,12 @@ keymap("n", "<Space>l", "<C-w>k", opts)
 keymap("n", "<Space>;", "<C-w>l", opts)
 keymap("n", "sv", ":vsplit<CR>", opts)
 keymap("n", "sh", ":split<CR>", opts)
+
+-- Resize with arrows
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Move text up and down
 keymap("v", "<A-k>", ":m .+1<CR>==", opts)
