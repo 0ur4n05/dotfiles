@@ -40,4 +40,4 @@ vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the curre
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
 
 -- colorsheme
-vim.cmd("colorscheme slightlyclownish")
+vim.cmd("colorscheme blue-moon")

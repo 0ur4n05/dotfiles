@@ -20,3 +20,7 @@ date :
 man : shows the man of a function
 	[how to use]
 		:Man <function>
+lsp : auto completion
+	gd : go to a function
+	gr : go to refrence
+	<C-o> : go back

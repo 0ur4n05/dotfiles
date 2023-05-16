@@ -55,3 +55,10 @@ keymap("v", "j", "h", opts)
 keymap("v", "k", "j", opts)
 keymap("v", "l", "k", opts)
 keymap("v", ";", "l", opts)
+-- copilot keybindings
+keymap("n", "cd", ":Copilot disable<CR>", opts)
+keymap("v", "cd", ":Copilot disable<CR>", opts)
+keymap("n", "ce", ":Copilot enable<CR>", opts)
+keymap("v", "ce", ":Copilot enable<CR>", opts)
+keymap("n", "cs", ":Copilot status<CR>", opts)
+

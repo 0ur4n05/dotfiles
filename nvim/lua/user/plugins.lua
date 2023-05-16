@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+	use {"wbthomason/packer.nvim"}
 	use {"tpope/vim-fugitive"}		-- allows you to git commands from vim command line
 	use {"numToStr/Comment.nvim", config = function() require('Comment').setup()end} 	-- making commenting eazy
 	use {"ms-jpq/chadtree"}
@@ -28,7 +29,9 @@ return require('packer').startup(function(use)
 	-- man for nvim
 	use {"paretje/nvim-man"}
 	-- rust dependency management 
-	-- use {"Saecki/crates.nvim"}
+	use {"Saecki/crates.nvim"}
+	-- creating these lines that shows the scope of an if or a while lol
+	use {"lukas-reineke/indent-blankline.nvim"}
 	-- smoth scrolling 
 	use {"karb94/neoscroll.nvim" ,config = function()require("neoscroll").setup()end}
 	-- snippets
@@ -48,4 +51,11 @@ return require('packer').startup(function(use)
 	use {"saadparwaiz1/cmp_luasnip"}
 	use {"hrsh7th/cmp-nvim-lsp"}
 	use {"hrsh7th/cmp-nvim-lua"}
+	use {
+	  "kyazdani42/blue-moon",
+	  config = function()
+	    vim.opt.termguicolors = true
+	    vim.cmd "colorscheme blue-moon"
+	  end
+	}
 end)
