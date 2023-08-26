@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -20,8 +20,6 @@ vim.g.maplocalleader = " "
 
 -- chadtree -- 
 keymap("n", "cc", ":CHADopen<CR>", opts)
- -- terminal
-keymap("n", "t", ":ToggleTerm<CR>", opts)
 -- 42 header
 keymap("n", "std", ":Stdheader<CR>", opts)
 keymap("n", "da", ":!date<CR>", opts)
@@ -41,10 +39,9 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Move text up and down
-keymap("v", "<A-k>", ":m .+1<CR>==", opts)
-keymap("v", "<A-l>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+-- Navigate buffers
+keymap("n", "h", ":bnext<CR>", opts)
+keymap("n", "g", ":bprevious<CR>", opts)
 
 -- adjusting the keymaps
 keymap("n", "j", "h", opts)
@@ -55,10 +52,24 @@ keymap("v", "j", "h", opts)
 keymap("v", "k", "j", opts)
 keymap("v", "l", "k", opts)
 keymap("v", ";", "l", opts)
--- copilot keybindings
-keymap("n", "cd", ":Copilot disable<CR>", opts)
-keymap("v", "cd", ":Copilot disable<CR>", opts)
-keymap("n", "ce", ":Copilot enable<CR>", opts)
-keymap("v", "ce", ":Copilot enable<CR>", opts)
-keymap("n", "cs", ":Copilot status<CR>", opts)
 
+-- Insert --
+-- Press jk fast to exit insert mode 
+keymap("i", "jk", "<ESC>", opts)
+keymap("i", "kj", "<ESC>", opts)
+
+-- Visual --
+-- Stay in indent mode
+keymap("v", "<", "<gv^", opts)
+keymap("v", ">", ">gv^", opts)
+
+-- Move text up and down
+keymap("v", "<A-k>", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "<A-l>", ":m '<-2<CR>gv=gv", opts)
+
+-- Terminal --
+-- Better terminal navigation
+keymap("t", "<Space>j", "<C-\\><C-N><C-w>h", term_opts)
+keymap("t", "<Space>k", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<Space>l", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<Space>;", "<C-\\><C-N><C-w>l", term_opts)

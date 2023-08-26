@@ -1,14 +1,7 @@
 local servers = {
-	-- "cssls",
-	-- "html",
-	-- "tsserver",
-	"pyright",
-	"grammarly",
-	-- "bashls",
-	"jsonls",
-	-- "yamlls",
-	"rust_analyzer",
+	"bashls",
 	"clangd",
+  "pylsp",
 }
 
 local settings = {
@@ -38,11 +31,6 @@ end
 local opts = {}
 
 for _, server in pairs(servers) do
-	opts = {
-		on_attach = require("user.lsp.handlers").on_attach,
-		capabilities = require("user.lsp.handlers").capabilities,
-	}
-
 	server = vim.split(server, "@")[1]
 
 	local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server)
