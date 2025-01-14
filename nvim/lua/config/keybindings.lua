@@ -5,25 +5,10 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.keymap.set
 
---Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
--- 42 header
-keymap("n", "std", ":Stdheader<CR>", opts)
-keymap("n", "da", ":!date<CR>", opts)
-
--- Normal --
--- Better window navigation
 keymap("n", "<Space>j", "<C-w>h", opts)
 keymap("n", "<Space>k", "<C-w>j", opts)
 keymap("n", "<Space>l", "<C-w>k", opts)
@@ -80,4 +65,10 @@ keymap("t", "<Space>;", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "ff", ":Telescope find_files<CR>", opts)
 keymap("n", "fg", ":Telescope live_grep<CR>", opts)
 
--- unmapping h key
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, silent = true })
+vim.keymap.set("n", "<RightMouse>", function()
+  vim.cmd.exec '"normal! \\<RightMouse>"'
+
+  local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
+  require("menu").open(options, { mouse = true })
+end, {})

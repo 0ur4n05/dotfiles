@@ -1,0 +1,101 @@
+configuration {
+	font: "Terminus (TTF) 12";
+	show-icons: false;
+	location: 0;
+	yoffset: 100;
+	xoffset: 0;
+	case-sensitive: false;
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+window {
+    color:                        #333399;
+    border:                       2px;
+    border-color:                 #0099cc;
+    cursor:                       "default";
+    location:                     north;
+    anchor:                       north;
+    enabled:                      true;
+    background-color:             #000000;
+}
+mainbox {
+    enabled:                      true;
+    spacing:                      1px;
+    margin:                       5px;
+    background-color:             #000000;
+}
+
+inputbar {
+    enabled:                      true;
+    text-color:                   #000000;
+    spacing:                      10px;
+    padding:                      15px;
+    border-radius:                0px;
+    border-color:                 #000000;
+    background-color:             #000000;
+    children:                     [ "textbox-prompt-colon", "entry" ];
+}
+entry {
+    enabled:                      true;
+    background-color:             transparent;
+    text-color:                   #0099cc;
+    cursor:                       text;
+    placeholder:                  "RUN";
+    placeholder-color:            inherit;
+}
+
+listview {
+    enabled:                      true;
+    columns:                      1;
+    lines:                        8;
+    cycle:                        false;
+    dynamic:                      false;
+    scrollbar:                    false;
+    layout:                       vertical;
+    reverse:                      false;
+    fixed-height:                 true;
+    fixed-columns:                true;
+    spacing:                      0px;
+    padding:                      5px;
+    margin:                       0px;
+    background-color:             #000000;
+    border:0px;
+}
+
+element {
+    enabled:                      true;
+    padding:                      7px;
+    margin:                       2px;
+    cursor:                       pointer;
+    background-color:             #000000;
+    border-radius:                5px;
+    border:                       0px;
+    border-color: #000000;
+}
+
+element normal.normal {
+    background-color:            #000000;
+    text-color:                  #0099cc;
+}
+
+element normal.active {
+    background-color:            #000000;
+    text-color:                  #0099cc;
+}
+
+element selected.normal {
+    background-color:            #0066cc;
+    text-color:                  #000000;
+}
+
+element alternate.normal {
+    background-color:            #000000;
+    text-color:                  #0099cc;
+}

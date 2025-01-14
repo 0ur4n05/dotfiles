@@ -1,0 +1,116 @@
+* {
+    font-family: "Terminus (TTF)";
+    font-size: 12px;
+    min-height: 0;
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+
+@define-color bg		#000000;
+@define-color text		#0099cc;
+@define-color accent		#333399;
+@define-color highlight		#0066cc;
+@define-color secondary		#424153;
+
+window#waybar {
+  background: @bg;
+}
+
+#workspaces button {
+    color: @bg;
+    border-radius: 8px;
+    box-shadow: none;
+    margin: 2px 0;
+    padding: 0 2px;
+    transition: none;
+}
+
+#workspaces {
+    background-image: linear-gradient(to right, @text, @accent);
+}
+
+#workspaces button.active {
+  color: @secondary;
+  background: @bg;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
+  margin: 2px;
+  padding: 0 6px;
+}
+
+#custom-left1 {
+    font-size: 19.5px;
+    color: @text;
+    background: @bg;
+    padding-left: 6px;
+}
+
+#custom-left5 {
+    font-size: 19.5px;
+    color: @accent;
+    background: @bg;
+    padding-left: 6px;
+}
+
+#custom-right1 {
+    font-size: 19.5px;
+    color: @accent;
+    background: @bg;
+    padding-right: 10px;
+}
+
+#custom-right2 {
+    font-size: 19.5px;
+    color: @accent;
+    background: @bg;
+    padding-right: 10px;
+}
+
+#window {
+    color : @text;
+}
+
+#idle_inhibitor {
+    background : @accent;
+    padding-left: 10px;
+    font-size: 18px;
+    color: red;
+}
+
+#clock.time{
+    background : @accent;
+    color : @bg;
+}
+
+#custom-media{
+    padding-right: 10px;
+    color : @accent;
+    background : @bg;
+}
+
+#custom-wifi {
+    padding-left : 7px;
+    padding-right : 10px;
+    background-image: linear-gradient(to right, @accent, @text);
+    color : @secondary;
+    font-size: 18px;
+}
+
+#custom-cpu {
+    background : @text;
+}
+
+#memory {
+    background : @text;
+}
+
+#battery {
+    background-image : linear-gradient(to right, @text, @accent);
+}
+
+#custom-power{
+    color: @text;
+    margin-right : 5px;
+}

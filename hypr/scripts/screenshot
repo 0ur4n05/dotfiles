@@ -1,0 +1,17 @@
+#!/bin/sh
+
+screenshot_area() {
+    grim -g "$(slurp)" - > ~/Pictures/screenshots/$(date +%s)_area.png
+}
+
+screenshot() {
+    grim - > ~/Pictures/screenshots/$(date +%s)_full.png
+}
+
+if [[ "$1" == "--area" ]]; then
+    screenshot_area
+elif [[ "$1" == "--full" ]]; then
+    screenshot
+fi
+
+exit 0
